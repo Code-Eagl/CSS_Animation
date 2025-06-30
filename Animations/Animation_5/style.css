@@ -1,57 +1,62 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
 }
-#container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: #07252d;
-}
-h2 {
-  position: relative;
-  font-size: 6em;
-  letter-spacing: 15px;
-  background: transparent;
-  color: #0e3742;
-  text-transform: uppercase;
+.container {
+  height: 100vh;
   width: 100%;
-  text-align: center;
-  -webkit-box-reflect: below 8px linear-gradient(transparent, #000400);
-  line-height: 0.7em;
-  outline: none;
+  background: linear-gradient(#2a4d03, #4c8b04, #4a7716);
+}
+.box {
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 100px);
+  transform: perspective(1000px) rotatey(-45deg);
+  width: 200px;
+  height: 300px;
+  transform-style: preserve-3d;
+
+  /* transform: translate(-50%, -50%); */
+}
+.box div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
   animation: animate 5s linear infinite;
 }
+.box div span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, #dcf455, #e3d214, #dec236);
+  border-radius: 20px;
+}
+.box div span:nth-child(1) {
+  transform: rotateX(0deg);
+}
+.box div span:nth-child(2) {
+  transform: rotateX(45deg);
+}
+.box div span:nth-child(3) {
+  transform: rotateX(-45deg);
+}
+.box div span:nth-child(4) {
+  transform: rotateX(90deg);
+}
+.box div span:nth-child(5) {
+  transform: rotateX(-90deg);
+}
 @keyframes animate {
-  0%,
-  18%,
-  20%,
-  50.1%,
-  60%,
-  65.1%,
-  80%,
-  90.1%,
-  92% {
-    color: #11bfef;
-    box-shadow: none;
+  0% {
+    transform: perspective(1000px) rotateX(0deg);
   }
-  18.1%,
-  20.1%,
-  30%,
-  50%,
-  60.1%,
-  65%,
-  80.1%,
-  90%,
-  92.1%,
-  100% {
-    color: #0a6a87;
-    box-shadow: 0 0 10px #03bcf4, 0 0 20px #1fafdc, 0 0 40px #03bcf4,
-      0 0 80px #62b6cf, 0 0 160px #0a6a87;
-    /* Temporarily remove glowing shadow effect */
-    box-shadow: none;
+  0% {
+    transform: perspective(1000px) rotateX(359deg);
   }
 }

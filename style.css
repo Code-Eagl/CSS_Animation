@@ -4,13 +4,19 @@
   box-sizing: border-box;
 }
 
-body,
-html {
+body {
   font-family: "Segoe UI", sans-serif;
   height: 100%;
   background: #f7f7f8;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar {
+  background: linear-gradient(#02121d9a, #02253e, #021f2e, #0d044af5);
+}
 .container {
   display: flex;
   height: 100vh;
@@ -18,7 +24,7 @@ html {
 
 .sidebar {
   width: 220px;
-  background-color: #02253e;
+  background: linear-gradient(#02121d9a, #02253e, #021f2e, #0d044af5);
   color: #fff;
   padding: 20px;
 }
@@ -53,11 +59,11 @@ html {
   gap: 0.8rem;
   padding: 30px;
   overflow-y: auto;
-  background-color: #3b5562;
+  background: linear-gradient(#034767, #4c025f, #510303);
 }
 
 .hero {
-  background: #dcdcf6;
+  background: linear-gradient(#f0f3f49a, #c4c7ca, #9b9ea0, #c6c5cbf5);
   width: 50vh;
   height: 57vh;
   padding: 0.2rem;
@@ -89,6 +95,10 @@ html {
   margin: 5px;
   text-decoration: none;
   text-shadow: #111;
-  background-color: #dcdcf6;
+  background: linear-gradient(#f0f3f49a, #c4c7ca, #9b9ea0, #c6c5cbf5);
   border: 1px solid black;
+}
+.link a {
+  text-decoration: none;
+  color: #111;
 }
